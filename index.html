@@ -15,10 +15,10 @@
         <div class="weather-box">
             <div class="search-area">
                 <input id="search-text" type="text" placeholder="search any city">
-                <input id="search-button" type="button" value="search">
+                <input id="search-button" type="submit" value="search" onclick="fetchWeather()">
             </div>
-            <div class="display-area">
-                <div id="weather-data">hi</div>
+            <div id="weather-data" style="display: none;">
+                <h1>i am being displayed</h1>
             </div>
         </div>
     </div>
