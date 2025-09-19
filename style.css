@@ -1,0 +1,62 @@
+:root {
+    --primary-color: #4CAF50;
+    --secondary-color: #FF9800;
+    --bg-color: #ffd9d9;
+    --text-color-dark: #332d2d;
+    --text-color-light: #e4e0e0;
+}
+
+body {
+    background-color: var(--bg-color);
+    background-image: url(cloud.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* height: 80vh; */
+    margin: auto;
+}
+
+h1 {
+    text-align: center;
+}
+
+.weather-box-container {
+    background-color: rgba(0, 0, 0, 0.267);
+    border: 1px solid var(--text-color-dark);
+    color: var(--text-color-light);
+    width: 500px;
+    height: 300px;
+    text-align: center;
+    align-items: center;
+    margin: 10% auto;
+}
+
+/* .weather-box {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+} */
+
+.weather-box div {
+    align-items: center;
+    margin: auto;
+}
+
+#search-text {
+    padding: 10px;
+    width: 70%;
+    border-radius: 8px;
+}
+
+#search-text:active::placeholder {
+    color: transparent;
+}
+
+#search-button {
+    padding: 10px;
+    border-radius: 4px;
+}
+
+#search-button:hover {
+    background-color: var(--bg-color);
+    color: var(--text-color-dark);
+}
