@@ -15,11 +15,11 @@ async function fetchWeather() {
   }
 
   async function getLonAndLat() {
-    const countryCode = 977
+    // const countryCode = 977
     const geocodeURL = `https://api.openweathermap.org/geo/1.0/direct?q=${searchInput.replace(
       ' ',
       '%20'
-    )},${countryCode}&limit=1&appid=${apiKey}`
+    )},&limit=1&appid=${apiKey}`
 
     const response = await fetch(geocodeURL)
     if (!response.ok) {
@@ -64,8 +64,8 @@ async function fetchWeather() {
    </div>
    `
   }
+  const geocodeData = await getLonAndLat()
+  getWeatherData(geocodeData.lon, geocodeData.lat)
 }
 
-document.getElementById('search').value = '' // clearing the text input after search
-const geocodeData = await getLonAndLat()
-getWeatherData(geocodeData.lon, geocodeData.lat)
+document.getElementById('search-text').value = '' // clearing the text input after search
