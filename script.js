@@ -6,7 +6,7 @@ async function fetchWeather() {
 
   if (searchInput == '') {
     weatherData.innerHTML = `
-  <div>
+  <div class="weather-invalid">
   <h2>Invalid Input</h2>
   <p>Try again with <u> valid city name </u>.</p>
   </div>
@@ -15,7 +15,6 @@ async function fetchWeather() {
   }
 
   async function getLonAndLat() {
-    // const countryCode = 977
     const geocodeURL = `https://api.openweathermap.org/geo/1.0/direct?q=${searchInput.replace(
       ' ',
       '%20'
@@ -32,9 +31,9 @@ async function fetchWeather() {
     if (data.length == 0) {
       console.log('something went wrong here.')
       weatherData.innerHTML = `
-      <div>
+      <div class="weather-invalid">
       <h2> Invalid input: "${searchInput}"</h2>
-      <p>Please use Valid <u> city name</u>. </p>
+      <p>Please use valid <u> city name</u>. </p>
       </div>`
       return
     } else {
@@ -54,10 +53,11 @@ async function fetchWeather() {
     const data = await response.json()
 
     weatherData.innerHTML = `
+    <div>
    <img src="https://openweathermap.org/img/wn/${
      data.weather[0].icon
    }.png" alt="${data.weather[0].description}" width="100" />
-   <div>
+   <div class="weather-display-data">
    <h2>${data.name}</h2>
    <p><strong>Temperature:</strong>${Math.round(data.main.temp - 273.15)}°C</p> 
    <p><strong>Description:</strong>${data.weather[0].description}</p>
