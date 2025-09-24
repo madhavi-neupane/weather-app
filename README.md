@@ -24,4 +24,4 @@ The app fetches real-time weather data and changes the **background dynamically*
 - **OpenWeather API**
 ### 1. Clone the repository
 ```bash
-git clone https://github.com/yourusername/weather-app.git
+git clone https://github.com/madhavi-neupane/weather-app.git
