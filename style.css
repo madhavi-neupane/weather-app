@@ -15,14 +15,6 @@
             rgba(238, 130, 238, 0.200));
 }
 
-/* #FF0000 (Red),
-#FFA500 (Orange),
-#FFFF00 (Yellow),
-#008000 (Green),
-#0000FF (Blue),
-#4B0082 (Indigo),
-and #EE82EE (Violet) */
-
 body {
     background: linear-gradient(to right, rgba(255, 0, 0, 0.200),
             rgba(255, 166, 0, 0.200),
@@ -36,6 +28,8 @@ body {
     align-items: center;
     margin: 0;
     height: 100vh;
+    /* transition: 1s ease-in-out;
+    smooth transition */
 }
 
 h1,
@@ -44,7 +38,7 @@ h2 {
 }
 
 .weather-box-container {
-    background-color: rgba(255, 255, 255, 0.267);
+    background-color: rgba(255, 255, 255, 0.100);
     border-radius: 20px;
     color: var(--text-color-dark);
     max-width: 500px;
@@ -69,6 +63,10 @@ h2 {
     margin: auto;
 }
 
+.search-area input {
+    background-color: transparent;
+}
+
 #search-text {
     width: 70%;
     padding: 12px;
@@ -77,10 +75,6 @@ h2 {
     border: 1px solid var(--text-color-dark);
     outline: none;
     font-size: 1rem;
-}
-
-#search-text:active::placeholder {
-    color: transparent;
 }
 
 #search-button {
@@ -92,6 +86,7 @@ h2 {
     font-weight: 600;
     cursor: pointer;
     transition: 0.3s;
+    font-size: 1rem;
 }
 
 #search-button:hover {
@@ -106,7 +101,7 @@ h2 {
     margin-top: 20px;
     color: #fff;
     display: flex;
-    background-color: rgba(255, 255, 255, 0.467);
+    background-color: rgba(255, 255, 255, 0.267);
     backdrop-filter: blur(20px);
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
     color: var(--text-color-dark);

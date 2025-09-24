@@ -52,6 +52,23 @@ async function fetchWeather() {
 
     const data = await response.json()
 
+    const weatherCondition = data.weather[0].main.toLowerCase()
+    const body = document.body
+
+    if (weatherCondition.includes('clear')) {
+      body.style.background = 'linear-gradient( 90deg , #fceabb, #edca69ff)'
+    } else if (weatherCondition.includes('cloud')) {
+      body.style.background = 'linear-gradient( 90deg, #f4eee0ff, #5f5d5dff)'
+    } else if (weatherCondition.includes('rain')) {
+      body.style.background = 'linear-gradient( 90deg , #fceabb, #79b7dbff)'
+    } else if (weatherCondition.includes('snow')) {
+      body.style.background = 'linear-gradient( 90deg, #d3eeecff, #cde9e7ff)'
+    } else if (weatherCondition.includes('thunder')) {
+      body.style.background = 'linear-gradient( 90deg , #e0dedaff, #cea2e8ff)'
+    } else {
+      body.style.background = 'linear-gradient( 90deg, #f6dff7ff, #e09ce5ff)'
+    }
+
     weatherData.innerHTML = `
     <div>
    <img src="https://openweathermap.org/img/wn/${
